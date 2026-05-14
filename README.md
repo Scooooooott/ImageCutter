@@ -2,7 +2,7 @@
 
 A very simple tool for cropping images.
 
-**Live:** [https://your-project.pages.dev](https://your-project.pages.dev)
+**Live:** [https://imagecutter-ef5.pages.dev/](https://imagecutter-ef5.pages.dev/)
 
 ---
 
