@@ -1,0 +1,17 @@
+export default {
+  'upload.prompt': 'Click, drag, or Ctrl+V to paste',
+  'upload.hint': 'PNG · JPG · WebP · GIF supported',
+  'upload.ariaLabel': 'Upload image',
+  'toolbar.addH': '+ H-line',
+  'toolbar.addV': '+ V-line',
+  'toolbar.distH': 'Distribute H',
+  'toolbar.distV': 'Distribute V',
+  'toolbar.generate': 'Generate slices',
+  'reupload': 'Re-upload',
+  'output.title': 'Slices',
+  'card.download': 'Download',
+  'card.copy': 'Copy',
+  'card.copied': 'Copied',
+  'resize.hint': 'Drag the bottom-right handle to resize the editor',
+  'privacy': 'All image processing runs locally in your browser — no images or data are ever uploaded or stored.',
+}

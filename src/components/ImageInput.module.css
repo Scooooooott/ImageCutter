@@ -1,0 +1,36 @@
+.zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 2px dashed #ccc;
+  border-radius: 12px;
+  padding: 48px 24px;
+  cursor: pointer;
+  background: #fff;
+  transition: border-color 0.15s, background 0.15s;
+  outline: none;
+}
+
+.zone:hover,
+.zone:focus {
+  border-color: #E24B4A;
+  background: #fff8f8;
+}
+
+.icon {
+  font-size: 40px;
+  line-height: 1;
+}
+
+.primary {
+  font-size: 16px;
+  font-weight: 500;
+  color: #444;
+}
+
+.secondary {
+  font-size: 13px;
+  color: #999;
+}

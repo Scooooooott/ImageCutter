@@ -1,0 +1,17 @@
+export default {
+  'upload.prompt': 'Cliquez, glissez ou collez avec Ctrl+V',
+  'upload.hint': 'Compatible PNG · JPG · WebP · GIF',
+  'upload.ariaLabel': 'Téléverser une image',
+  'toolbar.addH': '+ Ligne H',
+  'toolbar.addV': '+ Ligne V',
+  'toolbar.distH': 'Répartir H',
+  'toolbar.distV': 'Répartir V',
+  'toolbar.generate': 'Générer les découpes',
+  'reupload': 'Nouvelle image',
+  'output.title': 'Résultats',
+  'card.download': 'Télécharger',
+  'card.copy': 'Copier',
+  'card.copied': 'Copié',
+  'resize.hint': 'Faites glisser le coin inférieur droit pour redimensionner',
+  'privacy': 'Tout le traitement s\'effectue localement dans votre navigateur — aucune image ni donnée n\'est envoyée ou stockée.',
+}

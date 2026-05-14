@@ -1,0 +1,17 @@
+export default {
+  'upload.prompt': '点击、拖拽或 Ctrl+V 粘贴图片',
+  'upload.hint': '支持 PNG · JPG · WebP · GIF',
+  'upload.ariaLabel': '上传图片',
+  'toolbar.addH': '+ 横线',
+  'toolbar.addV': '+ 纵线',
+  'toolbar.distH': '横向等分',
+  'toolbar.distV': '纵向等分',
+  'toolbar.generate': '生成切片',
+  'reupload': '重新上传',
+  'output.title': '切片结果',
+  'card.download': '下载',
+  'card.copy': '复制',
+  'card.copied': '已复制',
+  'resize.hint': '拖动右下角手柄可调整编辑区大小',
+  'privacy': '图片处理完全在浏览器本地进行，本页面不会上传或储存任何图片及数据。',
+}

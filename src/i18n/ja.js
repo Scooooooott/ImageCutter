@@ -1,0 +1,17 @@
+export default {
+  'upload.prompt': 'クリック・ドラッグ、またはCtrl+Vで貼り付け',
+  'upload.hint': 'PNG · JPG · WebP · GIF 対応',
+  'upload.ariaLabel': '画像をアップロード',
+  'toolbar.addH': '+ 横線',
+  'toolbar.addV': '+ 縦線',
+  'toolbar.distH': '横均等分割',
+  'toolbar.distV': '縦均等分割',
+  'toolbar.generate': '切り出し実行',
+  'reupload': '画像を変更',
+  'output.title': '切り出し結果',
+  'card.download': 'ダウンロード',
+  'card.copy': 'コピー',
+  'card.copied': 'コピー済み',
+  'resize.hint': '右下のハンドルをドラッグしてサイズ調整できます',
+  'privacy': 'すべての処理はブラウザ内でローカルに行われます。画像やデータが外部に送信・保存されることはありません。',
+}

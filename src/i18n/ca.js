@@ -1,0 +1,17 @@
+export default {
+  'upload.prompt': 'Fes clic, arrossega o enganxa amb Ctrl+V',
+  'upload.hint': 'Compatible amb PNG · JPG · WebP · GIF',
+  'upload.ariaLabel': 'Carrega una imatge',
+  'toolbar.addH': '+ Línia H',
+  'toolbar.addV': '+ Línia V',
+  'toolbar.distH': 'Distribuir H',
+  'toolbar.distV': 'Distribuir V',
+  'toolbar.generate': 'Genera retalls',
+  'reupload': 'Nova imatge',
+  'output.title': 'Resultats',
+  'card.download': 'Descarrega',
+  'card.copy': 'Copia',
+  'card.copied': 'Copiat',
+  'resize.hint': 'Arrossega la cantonada inferior dreta per redimensionar',
+  'privacy': 'Tot el processament es fa localment al vostre navegador — no s\'hi envien ni s\'hi emmagatzemen imatges ni dades.',
+}
