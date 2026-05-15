@@ -14,4 +14,11 @@ export default {
   'card.copied': 'コピー済み',
   'resize.hint': '右下のハンドルをドラッグしてサイズ調整できます',
   'privacy': 'すべての処理はブラウザ内でローカルに行われます。画像やデータが外部に送信・保存されることはありません。',
+  'tab.cut': '切り抜き',
+  'tab.rotate': '回転',
+  'rotate.ccw': '↺ 左回転',
+  'rotate.cw': '↻ 右回転',
+  'rotate.flipH': '↔ 左右反転',
+  'rotate.flipV': '↕ 上下反転',
+  'rotate.reset': '元に戻す',
 }

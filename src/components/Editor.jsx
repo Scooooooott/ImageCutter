@@ -113,6 +113,10 @@ export default function Editor({ image, hLines, vLines, onHLines, onVLines, onGe
   const addVLine = () => { if (vLines.length < MAX_LINES) onVLines(prev => insertLine(prev, bestInsertPos(prev))) }
   const equalizeH = () => { if (hLines.length > 0) onHLines(distributeLines(hLines.length)) }
   const equalizeV = () => { if (vLines.length > 0) onVLines(distributeLines(vLines.length)) }
+  const applyPreset = (n) => {
+    onHLines(distributeLines(n - 1))
+    onVLines(distributeLines(n - 1))
+  }
 
   const svgW = imgRect?.width ?? 0
   const svgH = imgRect?.height ?? 0
@@ -132,6 +136,10 @@ export default function Editor({ image, hLines, vLines, onHLines, onVLines, onGe
         <button className={styles.toolBtn} onClick={equalizeV} disabled={vLines.length === 0}>
           {t('toolbar.distV')}
         </button>
+        <span className={styles.divider} />
+        <button className={styles.toolBtn} onClick={() => applyPreset(2)}>2×2</button>
+        <button className={styles.toolBtn} onClick={() => applyPreset(3)}>3×3</button>
+        <button className={styles.toolBtn} onClick={() => applyPreset(4)}>4×4</button>
         <button className={`${styles.toolBtn} ${styles.generate}`} onClick={onGenerate}>
           {t('toolbar.generate')}
         </button>
@@ -162,6 +170,7 @@ export default function Editor({ image, hLines, vLines, onHLines, onVLines, onGe
               const y = pct * svgH
               return (
                 <g key={`h${i}`}>
+                  <line x1={0} y1={y} x2={svgW} y2={y} stroke="white" strokeWidth={3} pointerEvents="none" />
                   <line x1={0} y1={y} x2={svgW} y2={y} stroke={COLOR_NORMAL} strokeWidth={1} className={styles.line} />
                   <line x1={0} y1={y} x2={svgW} y2={y} stroke="transparent" strokeWidth={HITBOX}
                     style={{ cursor: 'ns-resize' }} onMouseDown={(e) => startDrag(e, 'h', i)} className={styles.hitbox} />
@@ -178,6 +187,7 @@ export default function Editor({ image, hLines, vLines, onHLines, onVLines, onGe
               const x = pct * svgW
               return (
                 <g key={`v${i}`}>
+                  <line x1={x} y1={0} x2={x} y2={svgH} stroke="white" strokeWidth={3} pointerEvents="none" />
                   <line x1={x} y1={0} x2={x} y2={svgH} stroke={COLOR_NORMAL} strokeWidth={1} className={styles.line} />
                   <line x1={x} y1={0} x2={x} y2={svgH} stroke="transparent" strokeWidth={HITBOX}
                     style={{ cursor: 'ew-resize' }} onMouseDown={(e) => startDrag(e, 'v', i)} className={styles.hitbox} />

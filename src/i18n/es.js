@@ -14,4 +14,11 @@ export default {
   'card.copied': 'Copiado',
   'resize.hint': 'Arrastra la esquina inferior derecha para redimensionar',
   'privacy': 'Todo el procesamiento ocurre localmente en tu navegador; no se suben ni almacenan imágenes ni datos.',
+  'tab.cut': 'Cortar',
+  'tab.rotate': 'Rotar',
+  'rotate.ccw': '↺ Girar izq.',
+  'rotate.cw': '↻ Girar der.',
+  'rotate.flipH': '↔ Voltear H',
+  'rotate.flipV': '↕ Voltear V',
+  'rotate.reset': 'Restablecer',
 }

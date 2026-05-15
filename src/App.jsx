@@ -3,6 +3,8 @@ import ImageInput from './components/ImageInput'
 import Editor from './components/Editor'
 import OutputGrid from './components/OutputGrid'
 import LangSwitcher from './components/LangSwitcher'
+import TabBar from './components/TabBar'
+import RotatePanel from './components/RotatePanel'
 import { cropImage } from './utils/crop'
 import { useLang } from './i18n/index'
 import styles from './App.module.css'
@@ -10,13 +12,17 @@ import styles from './App.module.css'
 export default function App() {
   const { t } = useLang()
   const [image, setImage] = useState(null)
+  const [originalImage, setOriginalImage] = useState(null)
+  const [activeTab, setActiveTab] = useState('cut')
   const [hLines, setHLines] = useState([])
   const [vLines, setVLines] = useState([])
   const [outputs, setOutputs] = useState([])
   const debounceRef = useRef(null)
 
   const handleImage = useCallback((img) => {
+    setOriginalImage(img)
     setImage(img)
+    setActiveTab('cut')
     setHLines([])
     setVLines([])
     setOutputs([])
@@ -24,11 +30,20 @@ export default function App() {
 
   const handleReset = () => {
     if (image?.src) URL.revokeObjectURL(image.src)
+    if (originalImage?.src && originalImage.src !== image?.src) {
+      URL.revokeObjectURL(originalImage.src)
+    }
+    setOriginalImage(null)
     setImage(null)
     setHLines([])
     setVLines([])
     setOutputs([])
   }
+
+  const handleRotatedImage = useCallback((newImage) => {
+    setImage(newImage)
+    setOutputs([])
+  }, [])
 
   const generate = useCallback(async () => {
     if (!image) return
@@ -82,16 +97,31 @@ export default function App() {
               {t('reupload')}
             </button>
           </div>
-          <p className={styles.hint}>{t('resize.hint')}</p>
-          <Editor
-            image={image}
-            hLines={hLines}
-            vLines={vLines}
-            onHLines={setHLines}
-            onVLines={setVLines}
-            onGenerate={generate}
-          />
-          <OutputGrid outputs={outputs} />
+
+          <TabBar activeTab={activeTab} onTabChange={setActiveTab} />
+
+          {activeTab === 'cut' && (
+            <>
+              <p className={styles.hint}>{t('resize.hint')}</p>
+              <Editor
+                image={image}
+                hLines={hLines}
+                vLines={vLines}
+                onHLines={setHLines}
+                onVLines={setVLines}
+                onGenerate={generate}
+              />
+              <OutputGrid outputs={outputs} />
+            </>
+          )}
+
+          {activeTab === 'rotate' && (
+            <RotatePanel
+              image={image}
+              originalImage={originalImage}
+              onImage={handleRotatedImage}
+            />
+          )}
         </>
       )}
     </div>

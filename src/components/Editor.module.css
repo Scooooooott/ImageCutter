@@ -29,6 +29,13 @@
   cursor: not-allowed;
 }
 
+.divider {
+  width: 1px;
+  background: #ddd;
+  align-self: stretch;
+  margin: 2px 0;
+}
+
 .generate {
   margin-left: auto;
   background: #E24B4A;

@@ -14,4 +14,11 @@ export default {
   'card.copied': 'Copiat',
   'resize.hint': 'Arrossega la cantonada inferior dreta per redimensionar',
   'privacy': 'Tot el processament es fa localment al vostre navegador — no s\'hi envien ni s\'hi emmagatzemen imatges ni dades.',
+  'tab.cut': 'Retallar',
+  'tab.rotate': 'Rotació',
+  'rotate.ccw': '↺ Gira esquerra',
+  'rotate.cw': '↻ Gira dreta',
+  'rotate.flipH': '↔ Reflexió H',
+  'rotate.flipV': '↕ Reflexió V',
+  'rotate.reset': 'Restablir',
 }

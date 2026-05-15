@@ -14,4 +14,11 @@ export default {
   'card.copied': 'Copied',
   'resize.hint': 'Drag the bottom-right handle to resize the editor',
   'privacy': 'All image processing runs locally in your browser — no images or data are ever uploaded or stored.',
+  'tab.cut': 'Cut',
+  'tab.rotate': 'Rotate',
+  'rotate.ccw': '↺ Rotate Left',
+  'rotate.cw': '↻ Rotate Right',
+  'rotate.flipH': '↔ Flip H',
+  'rotate.flipV': '↕ Flip V',
+  'rotate.reset': 'Reset to Original',
 }

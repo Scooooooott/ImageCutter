@@ -14,4 +14,11 @@ export default {
   'card.copied': '已复制',
   'resize.hint': '拖动右下角手柄可调整编辑区大小',
   'privacy': '图片处理完全在浏览器本地进行，本页面不会上传或储存任何图片及数据。',
+  'tab.cut': '裁剪',
+  'tab.rotate': '旋转',
+  'rotate.ccw': '↺ 左转 90°',
+  'rotate.cw': '↻ 右转 90°',
+  'rotate.flipH': '↔ 水平翻转',
+  'rotate.flipV': '↕ 垂直翻转',
+  'rotate.reset': '重置原图',
 }

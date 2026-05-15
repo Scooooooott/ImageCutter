@@ -1,0 +1,27 @@
+.bar {
+  display: flex;
+  border-bottom: 2px solid #eee;
+  margin-bottom: 16px;
+}
+
+.tab {
+  padding: 8px 20px;
+  font-size: 14px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #888;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: color 0.12s, border-color 0.12s;
+}
+
+.tab:hover {
+  color: #444;
+}
+
+.active {
+  color: #E24B4A;
+  border-bottom-color: #E24B4A;
+  font-weight: 600;
+}
