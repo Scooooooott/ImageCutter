@@ -1,122 +1,126 @@
-.wrapper {
-  margin-top: 20px;
-}
-
-.toolbar {
+.stageWrap {
+  flex: 1;
+  min-height: 360px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 12px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: auto;
 }
 
-.toolBtn {
-  padding: 6px 14px;
-  font-size: 13px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  background: #fff;
-  cursor: pointer;
-  transition: background 0.12s, border-color 0.12s;
-}
-
-.toolBtn:hover:not(:disabled) {
-  background: #f5f5f5;
-  border-color: #bbb;
-}
-
-.toolBtn:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-.divider {
-  width: 1px;
-  background: #ddd;
-  align-self: stretch;
-  margin: 2px 0;
-}
-
-.generate {
-  margin-left: auto;
-  background: #E24B4A;
-  color: #fff;
-  border-color: #E24B4A;
-  font-weight: 600;
-}
-
-.generate:hover:not(:disabled) {
-  background: #D85A30;
-  border-color: #D85A30;
-}
-
-.canvas {
+.stage {
   position: relative;
   display: inline-block;
+  background: var(--paper-2);
+  border-radius: 12px;
   max-width: 100%;
-}
-
-.img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
   user-select: none;
 }
 
-.svg {
-  position: absolute;
-  top: 0;
-  left: 0;
+.stage img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
   pointer-events: none;
-  overflow: visible;
+  transition: opacity 0.15s;
 }
 
-.hitbox {
-  pointer-events: all;
+.stage.processing img {
+  opacity: 0.5;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* cut lines */
+.cutLine {
+  position: absolute;
+  pointer-events: auto;
+}
+
+.visual {
+  position: absolute;
+  background: var(--coral);
+  opacity: 0.7;
+  transition: opacity 0.12s;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.95);
+}
+
+.h .visual {
+  left: 0; right: 0;
+  height: 1px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.v .visual {
+  top: 0; bottom: 0;
+  width: 1px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.h {
+  left: 0; right: 0;
+  height: 16px;
+  transform: translateY(-50%);
+  cursor: ns-resize;
+}
+
+.v {
+  top: 0; bottom: 0;
+  width: 16px;
+  transform: translateX(-50%);
+  cursor: ew-resize;
+}
+
+.cutLine:hover .visual,
+.cutLine.dragging .visual {
+  opacity: 1;
 }
 
 .deleteBtn {
-  pointer-events: all;
-}
-
-.line {
-  pointer-events: none;
-}
-
-.deleteBtn rect {
-  transition: fill 0.1s;
-}
-
-.deleteBtn:hover rect {
-  fill: #fff0f0;
-  stroke: #E24B4A;
-}
-
-.handle {
   position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 22px;
-  height: 22px;
-  cursor: nwse-resize;
-  /* diagonal stripe grip, clipped to bottom-right triangle */
-  background: repeating-linear-gradient(
-    -45deg,
-    transparent,
-    transparent 2px,
-    #bbb 2px,
-    #bbb 3.5px
-  );
-  clip-path: polygon(100% 0, 100% 100%, 0 100%);
-  transition: background 0.15s;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--coral-soft);
+  border: 1px solid var(--coral-soft-2);
+  color: var(--coral-ink);
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  line-height: 1;
+  opacity: 0;
+  transition: opacity 0.12s, background 0.12s, border-color 0.12s;
+  cursor: pointer;
+  pointer-events: auto;
+  padding: 0;
 }
 
-.handle:hover {
-  background: repeating-linear-gradient(
-    -45deg,
-    transparent,
-    transparent 2px,
-    #E24B4A 2px,
-    #E24B4A 3.5px
-  );
+.h .deleteBtn {
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
 }
+
+.v .deleteBtn {
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cutLine:hover .deleteBtn {
+  opacity: 1;
+}
+
+.deleteBtn:hover {
+  background: var(--coral);
+  color: white;
+  border-color: var(--coral);
+}
+

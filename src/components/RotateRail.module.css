@@ -1,0 +1,146 @@
+.section {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionTitle {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin: 0 0 10px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12.5px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.infoRow:last-child {
+  border-bottom: 0;
+}
+
+.infoLabel {
+  font-weight: 500;
+  color: var(--ink-2);
+}
+
+.infoValue {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 11.5px;
+}
+
+.rotateGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.rotBtn {
+  border: 1px solid var(--line);
+  background: white;
+  border-radius: 9px;
+  padding: 12px 8px;
+  font-size: 12px;
+  color: var(--ink-2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  transition: border-color 0.12s, background 0.12s, color 0.12s;
+}
+
+.rotBtn:hover:not(:disabled) {
+  border-color: var(--coral);
+  background: var(--coral-soft);
+  color: var(--coral-ink);
+}
+
+.rotBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.ico {
+  width: 22px;
+  height: 22px;
+  color: var(--ink);
+  display: inline-flex;
+}
+
+.rotBtn:hover:not(:disabled) .ico {
+  color: var(--coral-ink);
+}
+
+.ico svg {
+  width: 100%;
+  height: 100%;
+}
+
+.resetBtn {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 9px;
+  font-size: 12px;
+  color: var(--muted);
+  width: 100%;
+  margin-top: 8px;
+  transition: border-color 0.12s, background 0.12s, color 0.12s;
+}
+
+.resetBtn:hover:not(:disabled) {
+  border-color: var(--coral);
+  background: var(--coral-soft);
+  color: var(--coral-ink);
+}
+
+.resetBtn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.ba {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.thumb {
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  aspect-ratio: 1;
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.thumb img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+.tag {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  font-family: var(--mono);
+  font-size: 9px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1px 5px;
+  border-radius: 3px;
+  color: var(--ink-2);
+  letter-spacing: 0.04em;
+}

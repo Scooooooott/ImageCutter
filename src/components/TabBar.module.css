@@ -1,27 +1,40 @@
-.bar {
-  display: flex;
-  border-bottom: 2px solid #eee;
-  margin-bottom: 16px;
+.group {
+  display: inline-flex;
+  background: var(--paper-2);
+  border-radius: var(--r-md);
+  padding: 3px;
+  gap: 2px;
 }
 
 .tab {
-  padding: 8px 20px;
-  font-size: 14px;
-  border: none;
-  background: none;
-  cursor: pointer;
-  color: #888;
-  border-bottom: 2px solid transparent;
-  margin-bottom: -2px;
-  transition: color 0.12s, border-color 0.12s;
+  padding: 7px 14px;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  background: transparent;
+  border: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.12s, background 0.12s;
 }
 
 .tab:hover {
-  color: #444;
+  color: var(--ink-2);
 }
 
-.active {
-  color: #E24B4A;
-  border-bottom-color: #E24B4A;
-  font-weight: 600;
+.tab.active {
+  background: white;
+  color: var(--ink);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.icon {
+  display: inline-flex;
+}
+
+.icon svg {
+  width: 14px;
+  height: 14px;
 }

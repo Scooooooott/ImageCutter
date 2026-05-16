@@ -1,15 +1,38 @@
-.wrapper {
-  margin-top: 32px;
+.results {
+  margin-top: 28px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  padding: 22px;
+  max-height: 72vh;
+  overflow-y: auto;
 }
 
-.title {
-  font-size: 15px;
+.resultsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.resultsTitle {
+  margin: 0;
+  font-size: 17px;
   font-weight: 600;
-  color: #555;
-  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.sub {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
 }
 
 .grid {
   display: grid;
-  gap: 10px;
+  gap: 8px;
 }

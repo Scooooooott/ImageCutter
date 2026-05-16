@@ -42,6 +42,8 @@ export function transformImage(image, op) {
           src: URL.createObjectURL(blob),
           naturalWidth: canvas.width,
           naturalHeight: canvas.height,
+          size: blob.size,
+          format: 'PNG',
         })
       }, 'image/png')
     }

@@ -1,36 +1,71 @@
 .zone {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  border: 2px dashed #ccc;
-  border-radius: 12px;
-  padding: 48px 24px;
+  border: 2px dashed var(--line-2);
+  border-radius: 22px;
+  padding: 88px 24px;
+  text-align: center;
+  background: var(--canvas);
   cursor: pointer;
-  background: #fff;
   transition: border-color 0.15s, background 0.15s;
+  margin-top: 32px;
   outline: none;
 }
 
 .zone:hover,
-.zone:focus {
-  border-color: #E24B4A;
-  background: #fff8f8;
+.zone:focus,
+.zone.drag {
+  border-color: var(--coral);
+  background: var(--coral-soft);
 }
 
-.icon {
-  font-size: 40px;
-  line-height: 1;
+.glyph {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 22px;
+  border-radius: 18px;
+  background: var(--coral-soft);
+  color: var(--coral-ink);
+  display: grid;
+  place-items: center;
+  transition: background 0.15s;
 }
 
-.primary {
-  font-size: 16px;
-  font-weight: 500;
-  color: #444;
+.glyph svg {
+  width: 28px;
+  height: 28px;
 }
 
-.secondary {
-  font-size: 13px;
-  color: #999;
+.zone.drag .glyph {
+  background: white;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 0 0 8px;
+}
+
+.lede {
+  color: var(--muted);
+  margin: 0 auto 28px;
+  font-size: 13.5px;
+  max-width: 420px;
+}
+
+.chips {
+  display: inline-flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.chip {
+  border: 1px solid var(--line);
+  background: white;
+  border-radius: 999px;
+  padding: 4px 11px;
+  font-size: 11.5px;
+  color: var(--ink-2);
+  font-family: var(--mono);
 }

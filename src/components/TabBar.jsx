@@ -1,19 +1,24 @@
 import { useLang } from '../i18n/index'
+import { IconCut, IconRotate } from './Icons'
 import styles from './TabBar.module.css'
 
-const TABS = ['cut', 'rotate']
+const TABS = [
+  { id: 'cut',    icon: IconCut },
+  { id: 'rotate', icon: IconRotate },
+]
 
 export default function TabBar({ activeTab, onTabChange }) {
   const { t } = useLang()
   return (
-    <div className={styles.bar}>
-      {TABS.map((tab) => (
+    <div className={styles.group}>
+      {TABS.map(({ id, icon: Icon }) => (
         <button
-          key={tab}
-          className={`${styles.tab} ${activeTab === tab ? styles.active : ''}`}
-          onClick={() => onTabChange(tab)}
+          key={id}
+          className={`${styles.tab} ${activeTab === id ? styles.active : ''}`}
+          onClick={() => onTabChange(id)}
         >
-          {t(`tab.${tab}`)}
+          <span className={styles.icon}><Icon /></span>
+          {t(`tab.${id}`)}
         </button>
       ))}
     </div>
